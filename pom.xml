@@ -163,8 +163,8 @@
                                         ${tomcat.jvmargs}
                                         ${tomcat.jvmargs.debug}
                                     </cargo.start.jvmargs>
-                                    <sonar.organization>ksntst</sonar.organization>
-                                    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+                                    <!-- <sonar.organization>ksntst</sonar.organization>
+                                    <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
                                 </properties>
                             </configuration>
                         </configuration>
@@ -273,6 +273,8 @@
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
+                                    <!-- <sonar.organization>ksntst</sonar.organization>
+                                    <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
                                 </properties>
                             </configuration>
                         </configuration>
@@ -287,6 +289,8 @@
                 <seeker.javaagent>-javaagent:${basedir}/tools/seeker/seeker-agent.jar</seeker.javaagent>
                 <seeker.server.url>-Dseeker.server.url=https://server.example.com:8888</seeker.server.url>
                 <seeker.project.key>-Dseeker.project.key=Benchmark</seeker.project.key>
+                <sonar.organization>ksntst</sonar.organization>
+                <sonar.host.url>https://sonarcloud.io</sonar.host.url>
             </properties>
             <build>
                 <plugins>
@@ -384,6 +388,8 @@
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
+                                    <!-- <sonar.organization>ksntst</sonar.organization>
+                                    <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
                                 </properties>
                             </configuration>
                         </configuration>
@@ -491,6 +497,8 @@
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
+                                    <!-- <sonar.organization>ksntst</sonar.organization>
+                                    <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
                                 </properties>
                             </configuration>
                         </configuration>
@@ -598,6 +606,8 @@
                                     <cargo.tomcat.connector.keystorePass>changeit</cargo.tomcat.connector.keystorePass>
                                     <cargo.tomcat.connector.keyAlias>tomcat</cargo.tomcat.connector.keyAlias>
                                     <cargo.tomcat.httpSecure>true</cargo.tomcat.httpSecure>
+                                    <!-- <sonar.organization>ksntst</sonar.organization>
+                                    <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
                                 </properties>
                             </configuration>
                         </configuration>
@@ -1240,6 +1250,8 @@
         <tomcat.major.version>9</tomcat.major.version>
         <version.tomcat>9.0.84</version.tomcat>
         <tomcat.url>https://archive.apache.org/dist/tomcat/tomcat-${tomcat.major.version}/v${version.tomcat}/bin/apache-tomcat-${version.tomcat}.zip</tomcat.url>
+        <sonar.organization>ksntst</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
 </project>
