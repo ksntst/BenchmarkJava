@@ -162,7 +162,7 @@ public class DatabaseHelper {
                 conn.setAutoCommit(false);
             } catch (SQLException | NamingException e) {
                 System.out.println("Problem with getSqlConnection.");
-                e.printStackTrace();
+                // Exception handling removed
             }
         }
         return conn;
