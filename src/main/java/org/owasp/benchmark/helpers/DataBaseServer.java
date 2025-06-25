@@ -67,7 +67,7 @@ public class DataBaseServer {
             org.owasp.benchmark.helpers.DatabaseHelper.printResults(statement, sql, resp);
         } catch (java.sql.SQLException e) {
             if (org.owasp.benchmark.helpers.DatabaseHelper.hideSQLErrors) {
-                e.printStackTrace();
+                // e.printStackTrace() removed
                 resp.add(new XMLMessage("Error processing request: " + e.getMessage()));
                 return new ResponseEntity<List<XMLMessage>>(resp, HttpStatus.OK);
             } else throw new ServletException(e);
