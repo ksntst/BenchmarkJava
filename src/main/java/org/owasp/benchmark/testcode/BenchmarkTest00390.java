@@ -52,7 +52,28 @@ public class BenchmarkTest00390 extends HttpServlet {
                                             param.getBytes())));
         }
 
-        response.setHeader("X-XSS-Protection", "0");
-        response.getWriter().println(bar);
+        // Enable browser XSS protection
+        response.setHeader("X-XSS-Protection", "1; mode=block");
+        // Properly encode output to prevent XSS
+        response.getWriter().println(escapeHtml(bar));
+    }
+
+    // Simple HTML escaping to prevent XSS
+    private String escapeHtml(String input) {
+        if (input == null) return null;
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            switch (c) {
+                case '<': sb.append("&lt;"); break;
+                case '>': sb.append("&gt;"); break;
+                case '&': sb.append("&amp;"); break;
+                case '"': sb.append("&quot;"); break;
+                case '\'': sb.append("&#x27;"); break;
+                case '/': sb.append("&#x2F;"); break;
+                default: sb.append(c);
+            }
+        }
+        return sb.toString();
     }
 }
