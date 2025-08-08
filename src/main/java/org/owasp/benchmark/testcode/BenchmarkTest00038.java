@@ -58,11 +58,12 @@ public class BenchmarkTest00038 extends HttpServlet {
             }
         }
 
-        String sql = "SELECT * from USERS where USERNAME='foo' and PASSWORD='" + param + "'";
+        String sql = "SELECT * from USERS where USERNAME='foo' and PASSWORD=?";
         try {
             java.util.List<String> results =
                     org.owasp.benchmark.helpers.DatabaseHelper.JDBCtemplate.query(
                             sql,
+                            new Object[] { param },
                             new org.springframework.jdbc.core.RowMapper<String>() {
                                 @Override
                                 public String mapRow(java.sql.ResultSet rs, int rowNum)
